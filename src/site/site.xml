@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
+  name="${project.name}">
+  <version position="none" />
+  <publishDate position="right" />
+
+  <bannerLeft>
+    <name>${project.name}</name>
+  </bannerLeft>
+
+  <bannerRight>
+    <src>https://maven.apache.org/images/maven-logo-black-on-white.png</src>
+    <href>https://maven.apache.org/</href>
+  </bannerRight>
+
+  <edit>${project.scm.url}</edit>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.7</version>
+  </skin>
+
+  <custom>
+    <fluidoSkin>
+      <gitHub>
+        <projectId>reproducible-maven-builds/reproducible-maven-builds.github.io</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>red</ribbonColor>
+      </gitHub>
+    </fluidoSkin>
+  </custom>
+
+  <body>
+    <links>
+      <item name="Deterministic Compilation" href="https://en.wikipedia.org/wiki/Deterministic_compilation" />
+      <item name="reproducible-builds.org" href="https://reproducible-builds.org/" />
+      <item name="Apache" href="http://www.apache.org/" />
+      <item name="Maven" href="https://maven.apache.org/"/>
+    </links>
+    <breadcrumbs>
+      <item name="_" href="/"/>
+    </breadcrumbs>
+
+    <menu>
+      <item name="Welcome" href="/index.html"/>
+    </menu>
+
+    <menu ref="reports" />
+  </body>
+</project>
