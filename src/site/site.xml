@@ -46,6 +46,7 @@
 
     <menu>
       <item name="Welcome" href="/index.html"/>
+      <item name="References" href="/references.html"/>
     </menu>
 
     <menu ref="reports" />
