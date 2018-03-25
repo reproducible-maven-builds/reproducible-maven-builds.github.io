@@ -49,6 +49,7 @@
           <div class="well sidebar-nav">
     <ul class="nav nav-list">
     <li class="active"><a href="#"><span class="none"></span>Welcome</a></li>
+    <li><a href="references.html" title="References"><span class="none"></span>References</a></li>
       <li class="nav-header">Project Documentation</li>
     <li><a href="project-info.html" title="Project Information"><span class="icon-chevron-down"></span>Project Information</a>
     <ul class="nav nav-list">
@@ -73,7 +74,38 @@
         <div id="bodyColumn"  class="span10" >
 <div class="section">
 <h2><a name="Reproducible_Maven_Builds"></a>Reproducible Maven Builds</h2>
-<p>Getting reproducible builds with Java, ie. builds that always produce the same binary output, requires some tweaks since Java is not reproducible-friendly from the beginning: jar files, with files order and timestamp, is a first natural source of variation. In addition to issues caused by Java, some Maven plugins cause additional variations: see <a class="externalLink" href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318">Maven Reproducible/Verifiable Builds Wiki page</a>.</p></div>
+<p>Getting reproducible builds with Java, ie. builds that always produce the same binary output, requires some tweaks since Java is not reproducible-friendly from the beginning: jar files, with files order and timestamp, is a first natural source of variation. In addition to issues caused by Java, some Maven plugins cause additional variations: see <a class="externalLink" href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318">Maven Reproducible/Verifiable Builds Wiki page</a>.</p>
+<p>There are 2 main strategies to get reproducible builds:</p>
+<ul>
+
+<li>
+
+<p>post-process output to remove unwanted variance,</p>
+</li>
+<li>
+
+<p>change build behaviour to avoid variance from start.</p>
+</li>
+</ul>
+<p>Ideally the second strategy would be the only one, but reality requires to be able to post-process while working on initial variance removal (which may happen not only from <a class="externalLink" href="https://maven.apache.org/plugins/">Apache Maven&#x2019;s Plugins</a> but also from Maven Plugins in the large ecosystem) and dealing with the hard compromises that may arise.</p>
+<div class="section">
+<h3><a name="Post_Processing_Solutions"></a>Post Processing Solutions</h3>
+<p>A few implementations are available:</p>
+<ul>
+
+<li>
+
+<p><a class="externalLink" href="https://zlika.github.io/reproducible-build-maven-plugin/">Reproducible Build Maven Plugin</a>, a Maven Plugin from the large ecosystem that removes every known variance when bound at <tt>pre-integration-test</tt> <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">phase</a>,</p>
+</li>
+<li>
+
+<p><a class="externalLink" href="http://byteman.jboss.org/">Byteman</a> rules TBD</p>
+</li>
+</ul></div>
+<div class="section">
+<h3><a name="Avoiding_Variance_From_Start"></a>Avoiding Variance From Start</h3>
+<p>Some work is tracked on <a class="externalLink" href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318">Maven Reproducible/Verifiable Builds Wiki page</a>.</p>
+<p>One objective of this site is to test some implementations of the key issue now: what to do at jar/zip files level? What timestamp to use? What&#x2019;s the impact of files ordering on performance (after having implemented parallel compression exactly to improve performance, but at the cost of unpredictable files order, which was not an issue until now&#x2026;)?</p></div></div>
         </div>
       </div>
     </div>
