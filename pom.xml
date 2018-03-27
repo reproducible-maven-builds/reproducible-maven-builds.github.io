@@ -42,6 +42,10 @@
 
   <developers>
     <developer>
+      <id>psakar</id>
+      <name>Petr Sakar</name>
+    </developer>
+    <developer>
       <id>hboutemy</id>
       <name>Hervé Boutemy</name>
       <timezone>Europe/Paris</timezone>
