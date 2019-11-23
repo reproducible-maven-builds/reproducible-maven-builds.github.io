@@ -5,6 +5,8 @@ References
 
 - [reproducible-builds.org](https://reproducible-builds.org/)
 
+- [Maven - Guide to Configuring for Reproducible Builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html)
+
 - [Maven Reproducible/Verifiable Builds Wiki page](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318)
 
 - [Reproducible Build Maven Plugin](https://zlika.github.io/reproducible-build-maven-plugin/)

@@ -12,9 +12,18 @@ There are 2 main strategies to get reproducible builds:
 
 - change build behaviour to avoid variance from start.
 
-Ideally the second strategy would be the only one, but reality requires to be able to post-process while working on
+Since november 2019, the second strategy is available: read [Maven - Guide to Configuring for Reproducible Builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html).
+
+Before, reality required to be able to post-process while working on
 initial variance removal (which may happen not only from [Apache Maven's Plugins](https://maven.apache.org/plugins/)
 but also from Maven Plugins in the large ecosystem) and dealing with the hard compromises that may arise.
+
+### Avoiding Variance From Start
+
+[Maven - Guide to Configuring for Reproducible Builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html) summaries
+how to configure your Maven build to get Reproducible Builds as part of your normal builds.
+
+Work is tracked on [Maven Reproducible/Verifiable Builds Wiki page](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318).
 
 ### Post Processing Solutions
 
@@ -25,12 +34,3 @@ A few implementations are available:
   [phase](https://maven.apache.org/ref/current/maven-core/lifecycles.html),
 
 - [Byteman](http://byteman.jboss.org/) rules TBD
-
-### Avoiding Variance From Start
-
-Some work is tracked on [Maven Reproducible/Verifiable Builds Wiki page](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318).
-
-One objective of this site is to test some implementations of the key issue now: what to do at jar/zip files level?
-What timestamp to use? What's the impact of files ordering on performance (after having implemented parallel
-compression exactly to improve performance, but at the cost of unpredictable files order, which was not
-an issue until now...)?
